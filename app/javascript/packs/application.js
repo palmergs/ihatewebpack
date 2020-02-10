@@ -16,4 +16,17 @@ require("channels")
 const images = require.context('../images', true)
 const imagePath = (name) => images(name, true)
 
+
+
 import('src/application')
+
+import flatpickr from "flatpickr"
+require("flatpickr/dist/flatpickr.css")
+require("flatpickr/dist/themes/airbnb.css")
+document.addEventListener("turbolinks:load", () => {
+  flatpickr("[data-behavior='flatpickr']", {
+    dateFormat: "Y-m-d"
+  });
+});
+
+import('src/chart')
